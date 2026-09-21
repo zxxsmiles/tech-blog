@@ -61,10 +61,29 @@ hugo --minify           # 生成到 public/
 ├── content/
 │   ├── posts/                   # 文章都在这里
 │   └── search.md                # 站内搜索页
+├── scripts/make_favicons.py     # 生成图标（纯标准库，无需 Pillow）
+├── static/                      # favicon 等静态资源
 ├── themes/PaperMod/             # 主题（已 vendored 进仓库）
 ├── hugo.toml                    # 站点配置
 └── .github/workflows/deploy.yml # 自动部署
 ```
+
+### 图标
+
+`static/` 下的 favicon 目前是**占位图**（深色圆角方块 + 字母 T），由
+`scripts/make_favicons.py` 用纯 Python 标准库生成。换图标两种方式：
+
+```bash
+# 1. 改脚本里的颜色/字形后重新生成
+python3 scripts/make_favicons.py static
+
+# 2. 或者直接替换 static/ 下的同名文件
+#    favicon.ico / favicon-16x16.png / favicon-32x32.png
+#    apple-touch-icon.png / safari-pinned-tab.svg
+```
+
+PaperMod 会无条件输出这几个文件的 `<link>` 标签，所以文件必须存在，
+否则每次访问都会有几个 404。
 
 ### 关于主题
 
