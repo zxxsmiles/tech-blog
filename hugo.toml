@@ -1,0 +1,46 @@
+baseURL = "https://zxxsmiles.github.io/tech-blog/"
+title = "Tech Blog"
+locale = "zh-CN"
+defaultContentLanguage = "zh"
+theme = "PaperMod"
+enableRobotsTXT = true
+enableEmoji = true
+
+# 首页 JSON 输出用于站内搜索
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  author = "zhangxiaoxing"
+  description = "记录技术学习与实践"
+  dateFormat = "2006-01-02"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowToc = true
+  TocOpen = false
+  ShowFullTextinRSS = false
+
+[params.assets]
+  disableHLJS = true
+  favicon = ""
+
+[params.homeInfoParams]
+  Title = "Tech Blog"
+  Content = "记录技术学习与实践。"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/zxxsmiles"
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+  [markup.goldmark.renderer]
+    unsafe = true
